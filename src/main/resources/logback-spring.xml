@@ -23,8 +23,8 @@
                 <context/>
                 <stackTrace>
                     <throwableConverter class="net.logstash.logback.stacktrace.ShortenedThrowableConverter">
-                        <maxDepthPerThrowable>200</maxDepthPerThrowable>
-                        <maxLength>8048</maxLength>
+                        <maxDepthPerThrowable>30</maxDepthPerThrowable>
+                        <maxLength>2048</maxLength>
                         <shortenedClassNameLength>20</shortenedClassNameLength>
                         <rootCauseFirst>true</rootCauseFirst>
                         <inlineHash>false</inlineHash>
@@ -61,12 +61,12 @@
                     <omitEmptyFields>true</omitEmptyFields>
                     <pattern>
                         {
-                        "trace": {
-                        "trace_id": "%mdc{X-B3-TraceId}",
-                        "span_id": "%mdc{X-B3-SpanId}",
-                        "parent_span_id": "%mdc{X-B3-ParentSpanId}",
-                        "exportable": "%mdc{X-Span-Export}"
-                        }
+                            "trace": {
+                                "trace_id": "%mdc{X-B3-TraceId}",
+                                "span_id": "%mdc{X-B3-SpanId}",
+                                "parent_span_id": "%mdc{X-B3-ParentSpanId}",
+                                "exportable": "%mdc{X-Span-Export}"
+                            }
                         }
                     </pattern>
                 </pattern>
